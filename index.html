@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIHAMERA | A New Era Of Beauty</title>
+    <!-- ربط ملف الستايل الخارجي -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="logo">RIHAMERA</div>
+    </header>
+
+    <!-- 3D Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="my-shop/hero.jpeg" alt="RIHAMERA Collection" class="floating-3d">
+            </div>
+            <div class="hero-content">
+                <h2>A New Era Of Beauty</h2>
+                <p>Indulge in our exquisite collection of premium hydrating body lotions and refreshing mists. Crafted to seamlessly layer together for an enduring signature fragrance profile.</p>
+                <button class="btn-main" id="view-collection-btn">View Collection</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick access panel and bag summary -->
+    <section class="quick-access">
+        <div class="quick-panel">
+            <div class="input-group">
+                <label for="autocall-input">Quick request</label>
+                <input id="autocall-input" type="text" placeholder="Type autocall and press Enter">
+            </div>
+            <div class="bag-summary-panel">
+                <div id="cart-status">Your bag is empty. Add an item to start.</div>
+                <div class="bag-total">Total: <span id="cart-total">$0.00</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Catalog -->
+    <main id="catalog">
+        <h2 class="section-title">Individual Essentials</h2>
+        <p class="section-subtitle">Luxury skin care curated uniquely for your daily ritual</p>
+        
+        <!-- Individual Items (All items under $15) -->
+        <div class="product-grid">
+            <!-- Item 1 -->
+            <div class="product-card-3d">
+                <div class="img-container">
+                    <img src="my-shop/mist.coconut.jpeg" alt="Body Mist Coconut Vanilla">
+                </div>
+                <h3>Body Mist</h3>
+                <p class="product-variant">Coconut Vanilla (100ml)</p>
+                <div class="card-footer">
+                    <p class="price">$15.00</p>
+                    <button class="btn-add" data-item="Body Mist - Coconut Vanilla" data-price="15.00">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card-3d">
+                <div class="img-container">
+                    <img src="my-shop/lotion-honey.jpeg" alt="Body Lotion Honey Milk">
+                </div>
+                <h3>Body Lotion</h3>
+                <p class="product-variant">Honey Milk (200ml)</p>
+                <div class="card-footer">
+                    <p class="price">$15.00</p>
+                    <button class="btn-add" data-item="Body Lotion - Honey Milk" data-price="15.00">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card-3d">
+                <div class="img-container">
+                    <img src="my-shop/lotion-coconut.jpeg" alt="Body Lotion Coconut Vanilla">
+                </div>
+                <h3>Body Lotion</h3>
+                <p class="product-variant">Coconut Vanilla (200ml)</p>
+                <div class="card-footer">
+                    <p class="price">$15.00</p>
+                    <button class="btn-add" data-item="Body Lotion - Coconut Vanilla" data-price="15.00">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card-3d">
+                <div class="img-container">
+                    <img src="my-shop/mist.honey.jpeg" alt="Body Mist Honey Milk">
+                </div>
+                <h3>Body Mist</h3>
+                <p class="product-variant">Honey Milk (100ml)</p>
+                <div class="card-footer">
+                    <p class="price">$15.00</p>
+                    <button class="btn-add" data-item="Body Mist - Honey Milk" data-price="15.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combo Packs Section -->
+        <h2 class="section-title">Exclusive Combo Offers</h2>
+        <p class="section-subtitle">Layer your fragrance. Buy 2 items together as a pair and save.</p>
+
+        <div class="product-grid combo-grid">
+            <!-- Combo Duo 1 -->
+            <div class="product-card-3d combo-card">
+                <div class="badge-3d">Best Value</div>
+                <div class="img-container">
+                    <img src="my-shop/combo-coconut.jpeg" alt="Coconut Vanilla Duo">
+                </div>
+                <h3>Signature Duo</h3>
+                <p class="product-variant">Coconut Vanilla set</p>
+                <div class="card-footer">
+                    <p class="price">$25.00</p>
+                    <button class="btn-add" data-item="Signature Duo - Coconut Vanilla" data-price="25.00">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Combo Duo 2 -->
+            <div class="product-card-3d combo-card">
+                <div class="badge-3d">Limited</div>
+                <div class="img-container">
+                    <img src="my-shop/combo-honey.jpeg" alt="Honey Milk Duo">
+                </div>
+                <h3>Signature Duo</h3>
+                <p class="product-variant">Honey Milk set</p>
+                <div class="card-footer">
+                    <p class="price">$25.00</p>
+                    <button class="btn-add" data-item="Signature Duo - Honey Milk" data-price="25.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>RIHAMERA · Premium self-care delivered with warmth and elegance.</p>
+    </footer>
+
+    <button id="bag-button" class="bag-button">My Bag (<span id="bag-count">0</span>)</button>
+    <a id="chat-owner-button" class="chat-owner-button" href="https://wa.me/79419443" target="_blank" rel="noreferrer">Chat with Owner</a>
+
+    <div id="autocall-modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="autocall-modal-close">×</button>
+            <h3>Autocall Request</h3>
+            <form id="autocall-form">
+                <input id="autocall-name" type="text" placeholder="Your Name" required>
+                <input id="autocall-phone" type="text" placeholder="Phone Number" required>
+                <input id="autocall-location" type="text" placeholder="Location" required>
+                <button type="submit" class="btn-accent">Request Call</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="order-modal-close">×</button>
+            <h3>Your Order</h3>
+            <div id="order-summary" class="order-summary"></div>
+            <form id="order-form">
+                <input id="order-name" type="text" placeholder="Your Name" required>
+                <input id="order-phone" type="text" placeholder="Phone Number" required>
+                <input id="order-location" type="text" placeholder="Delivery Location" required>
+                <button type="submit" class="btn-accent">Send Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="autocall-confirmation" class="autocall-confirmation"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

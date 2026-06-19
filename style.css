@@ -1,0 +1,450 @@
+/* --- Base Styling & Theme --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fff9f9; /* أبيض دافئ يميل للوردي الخفيف جداً */
+    color: #4a3e3d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Header --- */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 182, 193, 0.15);
+    border-bottom: 1px solid #ffe3e7;
+}
+
+header .logo {
+    font-size: 2.4rem;
+    letter-spacing: 6px;
+    font-weight: 300;
+    color: #ff758c; /* لون زهر مميز */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, #ffeef1 0%, #fff9f9 100%);
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* 3D Effect for Hero Image */
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 450px;
+    perspective: 1000px; /* يعطي عمق ثلاثي الأبعاد */
+}
+
+.floating-3d {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(255, 117, 140, 0.2), 
+                0 5px 15px rgba(0, 0, 0, 0.05);
+    transform: rotateY(-5px) rotateX(5px);
+    transition: transform 0.5s ease;
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0px) rotateY(-5px) rotateX(5px); }
+    50% { transform: translateY(-12px) rotateY(-2px) rotateX(2px); }
+    100% { transform: translateY(0px) rotateY(-5px) rotateX(5px); }
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    color: #7c6a69;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.15rem;
+}
+
+/* --- Buttons --- */
+.btn-main {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 117, 140, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 117, 140, 0.5);
+}
+
+/* --- Section Titles --- */
+.section-title {
+    text-align: center;
+    padding-top: 6rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #ff758c;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #a3908f;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* --- Product Grid & 3D Cards --- */
+.product-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3.5rem;
+}
+
+.product-card-3d {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid #ffe3e7;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* تفعيل تأثير الـ 3D عند تمرير الماوس */
+.product-card-3d:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 117, 140, 0.25);
+}
+
+.img-container {
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: #fff9f9;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card-3d:hover .img-container img {
+    transform: scale(1.06);
+}
+
+.product-card-3d h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+.product-variant {
+    font-size: 0.95rem;
+    color: #a3908f;
+    margin-bottom: 1.5rem;
+}
+
+/* Pricing Style */
+.card-footer {
+    margin-top: auto;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+
+.price .original {
+    text-decoration: line-through;
+    color: #ccbabc;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
+}
+
+.price .sale {
+    color: #ff5376;
+    font-weight: 700;
+}
+
+/* Grid Buttons */
+.btn-add {
+    width: 100%;
+    background-color: #fff;
+    color: #ff758c;
+    border: 2px solid #ff758c;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #ff758c;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+}
+
+/* Combo Section Features */
+.combo-grid {
+    max-width: 900px;
+}
+
+.combo-card {
+    border: 2px solid #ffccd5;
+}
+
+.badge-3d {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff5376 0%, #ff758c 100%);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 83, 118, 0.4);
+    letter-spacing: 1px;
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    color: white;
+    border: none;
+}
+..btn-accent:hover {
+    background: linear-gradient(135deg, #ff5376 0%, #ff758c 100%);
+}
+
+.bag-button,
+.chat-owner-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background: linear-gradient(135deg, #ff758c 0%, #ff4f75 100%);
+    color: white;
+    border: none;
+    padding: 0.95rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    box-shadow: 0 16px 32px rgba(255, 117, 140, 0.25);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-owner-button {
+    bottom: 5.5rem;
+    background: linear-gradient(135deg, #4c3042 0%, #8a3859 100%);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 1100;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background: white;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 520px;
+    padding: 2rem;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #7c6a69;
+    cursor: pointer;
+}
+
+.modal-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.modal-card input {
+    width: 100%;
+    margin-bottom: 0.9rem;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #e8d9d7;
+    font-size: 1rem;
+    color: #4a3e3d;
+}
+
+.modal-card .btn-accent {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quick-access {
+    padding: 2rem 2rem 0;
+}
+
+.quick-panel {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #e8d9d7;
+}
+
+.bag-summary-panel {
+    background: #fff5f7;
+    border: 1px solid #ffe3e7;
+    border-radius: 20px;
+    padding: 1.25rem 1.4rem;
+    color: #7c6a69;
+}
+
+.bag-summary-panel .bag-total {
+    margin-top: 0.75rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.autocall-confirmation {
+    position: fixed;
+    left: 50%;
+    bottom: 3.5rem;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #ffccd5;
+    color: #333;
+    padding: 0.95rem 1.3rem;
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 1200;
+}
+
+.autocall-confirmation.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #2b2122;
+    color: #d6c5c7;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 8rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* --- Responsive Layout --- */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        text-align: left;
+    }
+    .hero-content {
+        text-align: left;
+        flex: 1;
+        padding-left: 2rem;
+    }
+}
